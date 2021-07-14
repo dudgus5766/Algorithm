@@ -22,3 +22,26 @@ for (let i = 0; i < input.length -2; i++){
     let sum = input[i].split(' ');
     console.log(Number(sum[0]) + Number(sum[1]));
 }
+
+/*
+스터디에서 철진님의 코드를 참고하여 다시 만들었다.
+while문 단계에서 while를 쓰지 않은게 영 찜찜했는데 해결하게 되어 기쁘다.
+감사합니다 철진님!
+*/
+
+//답안2
+const fs = require("fs");
+const input = fs.readFileSync("./dev/stdin").toString().split('\n');
+
+let i = 0;
+
+while (true) {
+        let num1 = Number(input[i].split(" ")[0]);
+        let num2 = Number(input[i].split(" ")[1]);
+        i++;
+    if (num1 === 0 && num2 === 0) {
+    break;
+// while문에서 [0,0] input이 들어오면 break;를 통해 멈추게 된다.
+}
+console.log(num1 + num2);
+}
