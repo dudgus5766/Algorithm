@@ -31,20 +31,26 @@
 
 // console.console.log(result);
 
-let fs = require('fs');
-let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+// let fs = require('fs');
+// let input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
-let i = 0;
 
-for(i=0; i<input.length-1; i++){
-    let num = input[i];
-    for(a=1; a<num-a; a++){
-    arr = [];
+let inputs = "4\n2\n3\n4\n5";
+let input = inputs.trim().split("\n").map(x => +x);
+// map(x => +x) 여기서 '+'는 숫자 연산자로 바꿔주게 된다. 여기서 map(Number)와 뭐가 다른건지 궁금! -> '결론은 같다!'
+
+let result = "";
+
+for(let i=1; i<input.length; i++){
+    const num = input[i];
+
+    let arr = [];
+
+    for(let a=1; a<num-a; a++){
     arr.push([a, num-a]);
     }
-   result = `Pairs for ${num}: ${arr.join()}`;
+    
+   result = `Pairs for ${num}: ${arr.map(x => x.join(" ")).join(', ')}`;
+   console.log(result);
 }
 
-console.console.log(result);
-
-// 문제가 어려워서 일단 다른 문제부터 풀고 나중에 다시 풀어볼 예정!
