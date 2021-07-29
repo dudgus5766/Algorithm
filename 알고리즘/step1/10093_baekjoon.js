@@ -10,29 +10,32 @@
 
 
 // let fs = require('fs');
-// let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+// let input = fs.readFileSync('/dev/stdin').toString().split(' ').map(x => +x);
+
 let inputs = '8 14';
-let input = inputs.trim().split(' ');
+let input = inputs.trim().split(' ').map(x => +x);
 
 let A = input[0]; // 8
 let B = input[1]; // 14
-console.log(A);
-if (A > B) {
-    let temp = A;
-    A = B;
-    B = temp;
-}
-console.log(B);
+let arr = [];
+// 빈 배열 생성
 
-if (A === B || A + 1 === B) {
+if(A < B){
+    console.log(B - A -1);
+    for(let i = A + 1; i < B; i++){
+        arr.push(i);
+        // 배열에 하나씩 입력
+    }
+}else if(B < A){
+    console.log(A - B -1);
+    for(let i = B + 1; i < A; i++){
+        arr.push(i);
+    }
+}else{
     console.log(0);
 }
 
-let result = "";
-for (let i = 1; i < B - A; i++) {
-    result = A + i;
-    console.log(result);
-}
+console.log(arr.join(' '));
+// 배열을 ,로 나눠서 숫자로 나타냄
 
-// 너무 어렵다..조금 더 시간을 갖고 풀어보기로....ㅠㅠ
-// A가 B보다 크면 어떻게 해야할까..
+// 풀지 못했던 문제 클리어!🥳
