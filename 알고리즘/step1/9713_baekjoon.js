@@ -21,12 +21,8 @@ for(let i = 1; i <= input.length-1; i++){
         if(j%2 !== 0){
 
         result += j
-            // console.log(result);
 
         }
-    console.log(result);
-
     }
-    // console.log(result);
-
+    console.log(result);
 }
